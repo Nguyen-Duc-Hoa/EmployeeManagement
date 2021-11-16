@@ -1,0 +1,14 @@
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\bin\Debug\netcoreapp3.1\EmployeeManagement.Repository.deps.json
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\bin\Debug\netcoreapp3.1\EmployeeManagement.Repository.dll
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\bin\Debug\netcoreapp3.1\EmployeeManagement.Repository.pdb
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\obj\Debug\netcoreapp3.1\EmployeeManagement.Repository.csprojAssemblyReference.cache
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\obj\Debug\netcoreapp3.1\EmployeeManagement.Repository.AssemblyInfoInputs.cache
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\obj\Debug\netcoreapp3.1\EmployeeManagement.Repository.AssemblyInfo.cs
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\obj\Debug\netcoreapp3.1\EmployeeManagement.Repository.dll
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\obj\Debug\netcoreapp3.1\EmployeeManagement.Repository.pdb
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\bin\Debug\netcoreapp3.1\EmployeeManagement.Data.dll
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\bin\Debug\netcoreapp3.1\EmployeeManagement.Model.dll
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\bin\Debug\netcoreapp3.1\EmployeeManagement.Data.pdb
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\bin\Debug\netcoreapp3.1\EmployeeManagement.Model.pdb
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\obj\Debug\netcoreapp3.1\EmployeeManagement.Repository.csproj.CopyComplete
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Repository\obj\Debug\netcoreapp3.1\EmployeeManagement.Repository.csproj.CoreCompileInputs.cache
