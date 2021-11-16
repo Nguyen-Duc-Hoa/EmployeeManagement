@@ -1,0 +1,12 @@
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\bin\Debug\netcoreapp3.1\EmployeeManagement.Model.deps.json
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\bin\Debug\netcoreapp3.1\EmployeeManagement.Model.dll
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\bin\Debug\netcoreapp3.1\EmployeeManagement.Model.pdb
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\obj\Debug\netcoreapp3.1\EmployeeManagement.Model.csprojAssemblyReference.cache
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\obj\Debug\netcoreapp3.1\EmployeeManagement.Model.AssemblyInfoInputs.cache
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\obj\Debug\netcoreapp3.1\EmployeeManagement.Model.AssemblyInfo.cs
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\obj\Debug\netcoreapp3.1\EmployeeManagement.Model.dll
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\obj\Debug\netcoreapp3.1\EmployeeManagement.Model.pdb
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\bin\Debug\netcoreapp3.1\EmployeeManagement.Data.dll
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\bin\Debug\netcoreapp3.1\EmployeeManagement.Data.pdb
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\obj\Debug\netcoreapp3.1\EmployeeManagement.Model.csproj.CopyComplete
+G:\ThucHanh\Angular\EmployeeManagement\WebAPI\EmployeeManagement.APIs\EmployeeManagement.Model\obj\Debug\netcoreapp3.1\EmployeeManagement.Model.csproj.CoreCompileInputs.cache

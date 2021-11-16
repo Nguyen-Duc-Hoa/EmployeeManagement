@@ -30,6 +30,187 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "projectReferences": {
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj"
+              },
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj"
+              },
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj"
+              },
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
+        "projectName": "EmployeeManagement.Application",
+        "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Application\\EmployeeManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\",
+        "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nguyen Duc Hoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj"
+              },
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj"
+              },
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.19, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj",
+        "projectName": "EmployeeManagement.Data",
+        "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj",
+        "packagesPath": "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\",
+        "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nguyen Duc Hoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -41,6 +222,173 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.19, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.18, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj",
+        "projectName": "EmployeeManagement.Model",
+        "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj",
+        "packagesPath": "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\",
+        "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nguyen Duc Hoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.19, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj",
+        "projectName": "EmployeeManagement.Repository",
+        "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj",
+        "packagesPath": "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\",
+        "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nguyen Duc Hoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj"
+              },
+              "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj": {
+                "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.19, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
