@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterExpandSettings } from '@progress/kendo-angular-treeview';
 import { Observable, of } from 'rxjs';
+import { HttpServerService } from 'src/app/Services/http-server.service';
 
 
 @Component({
@@ -14,51 +15,58 @@ export class DashboardComponent implements OnInit {
     expandMatches: true,
   };
   
-    public treeNodes: any[] = [
-      {
-        id: 1,
-        categoryName: "Storage",
-        subCategories: [
-          { 
-            id: 3,
-            categoryName: "Wall Shelving" ,
-            subCategories: [
-              { 
-                id: 6,
-                categoryName: "Subcate" 
-              }
-            ]},
-          { 
-            id: 4,
-            categoryName: "Floor Shelving" 
+    public treeNodes: any[] = [{
+      "DepartmentId": 2,
+      "Name": "Tổng giám đốc",
+      "FaDeparment": null,
+      "Departments": []
+  },
+  {
+      "DepartmentId": 3,
+      "Name": "Ban quản lý",
+      "FaDeparment": null,
+      "Departments": []
+  },
+  {
+      "DepartmentId": 4,
+      "Name": "Ban quản lý",
+      "FaDeparment": null,
+      "Departments": [
+          {
+              "DepartmentId": 6,
+              "Name": "Bộ phận tính lương",
+              "FaDeparment": 4,
+              "Departments": []
           },
-          { 
-            id: 5,
-            categoryName: "Kids Storage" 
+          {
+              "DepartmentId": 7,
+              "Name": "Quản lí nhân sự",
+              "FaDeparment": 4,
+              "Departments": []
           },
-        ],
-      },
-      {
-        id: 2,
-        categoryName: "Lights",
-        subCategories: [
-          { 
-            id: 7,
-            categoryName: "Ceiling" },
-          { 
-            id: 8,
-            categoryName: "Table" },
-          { 
-            id: 9,
-            categoryName: "Floor" },
-        ],
-      },
-];
+          {
+              "DepartmentId": 8,
+              "Name": "Quản lí nhân sự",
+              "FaDeparment": 4,
+              "Departments": []
+          }
+      ]
+  },
+  {
+      "DepartmentId": 5,
+      "Name": "Bộ nhân sự",
+      "FaDeparment": null,
+      "Departments": []
+  }];
 
 public always = () => true;
-  constructor() { }
+  constructor(private httpServerService: HttpServerService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.httpServerService.getTreeDepartment().subscribe(data=>{
+      
+      console.log("data", data);
+    })
   }
 
   public fetchChildren(node: any): Observable<any[]> {

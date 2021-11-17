@@ -1,5 +1,6 @@
 .navfeature{
     height: max-content;
+    padding: 1%;
     align-content: flex-end;
     background-color: cadetblue;
 }

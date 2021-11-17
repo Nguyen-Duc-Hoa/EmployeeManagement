@@ -998,11 +998,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj",
+      "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj",
       "projectName": "EmployeeManagement.Model",
-      "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj",
+      "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Model\\EmployeeManagement.Model.csproj",
       "packagesPath": "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\",
-      "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Model\\obj\\",
+      "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -1022,8 +1022,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj": {
-              "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj"
+            "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj": {
+              "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nroD2DkHEVS9M0TEo1hgbTJQzCl72FXG+1eQ4XJ22wvSzW4iHIHFydmdEjoGw8ugX4mB3gKlsUYHxNwCGcuHRQ==",
+  "dgSpecHash": "sXcMyKrDcy1TM/Zj1URRYGQJsf/C9JrxbjgoOhYyf0k8e2X0TfPLky72pAhLlhIx3hxpFxSZTnXR9aViz91ShQ==",
   "success": true,
-  "projectFilePath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj",
+  "projectFilePath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Repository\\EmployeeManagement.Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.19\\microsoft.aspnetcore.jsonpatch.3.1.19.nupkg.sha512",
     "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.19\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.19.nupkg.sha512",
