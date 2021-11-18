@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { MatDialogModule } from "@angular/material/dialog";
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GridEmployeeComponent } from './components/grid-employee/grid-employee.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+
 
 
 
@@ -22,7 +28,8 @@ import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
     AppComponent,
     EmployeesComponent,
     DashboardComponent,
-    GridEmployeeComponent
+    GridEmployeeComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -31,11 +38,14 @@ import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
     BrowserAnimationsModule,
     GridModule,
     ExcelExportModule,
+    FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    MatDialogModule,
+    DropDownsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddEmployeeComponent],
 })
 export class AppModule { }

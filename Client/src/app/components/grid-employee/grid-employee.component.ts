@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EmployeeServiceService } from 'src/app/Services/EmployeeServices/employee-service.service';
+import { AddEmployeeComponent } from '../add-employee/add-employee.component';
 
 @Component({
   selector: 'app-grid-employee',
@@ -648,13 +651,32 @@ export class GridEmployeeComponent implements OnInit {
       },
     ];
 
-  constructor() { }
+  constructor(private dialog: MatDialog, private employeeService: EmployeeServiceService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+
   }
 
   public doubleclick(){
     console.log('click');
   }
+
+  onCreate() {
+    this.employeeService.initializeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(AddEmployeeComponent,dialogConfig);
+    console.log("click add");
+  }
+
+  dblClickEvent(event : any) {
+    // debugger;
+  console.log('the selected row Index is '+ event.path[1].rowIndex);
+  //use the following line if you want to get the clicked cell content:
+  console.log('clicked cell content'+ event.path[0].textContent);
+  console.log('clicked cell content'+ event.path[0].rowIndex);
+}
 
 }

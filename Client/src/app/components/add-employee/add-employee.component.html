@@ -1,0 +1,83 @@
+<div class="bodyAdd">
+  <h2 mat-dialog-title>Add Employee</h2>
+  <div class="row">
+    <div class="column">
+      <p>ID</p>
+      <div class="example-wrapper">
+        <kendo-autocomplete
+          [data]="listItems"
+          [value]="country"
+          placeholder="e.g. Andorra"
+        >
+        </kendo-autocomplete>
+      </div>
+    </div>
+    <div class="column">
+      <p>First name</p>
+      <div class="example-wrapper">
+        <kendo-autocomplete
+          [data]="listItems"
+          [value]="country"
+          placeholder="e.g. Andorra"
+        >
+        </kendo-autocomplete>
+      </div>
+    </div>
+    <div class="column">
+      <p>Last name</p>
+      <div class="example-wrapper">
+        <kendo-autocomplete
+          [data]="listItems"
+          [value]="country"
+          placeholder="e.g. Andorra"
+        >
+        </kendo-autocomplete>
+      </div>
+    </div>
+
+    <div class="column">
+      <p>Department</p>
+      <kendo-dropdowntree
+        kendoDropDownTreeExpandable
+        [kendoDropDownTreeHierarchyBinding]="data1"
+        textField="text"
+        valueField="id"
+        childrenField="items"
+        [value]="value1"
+        class="furniture"
+    ></kendo-dropdowntree>
+    </div>
+
+    <div class="column">
+      <p>Postion</p>
+        <kendo-dropdownlist
+          [data]="listItems"
+          textField="text"
+          valueField="value"
+          [(ngModel)]="selectedValue"
+        >
+      </kendo-dropdownlist>
+    </div>
+
+    <div class="column">
+      <p>Title</p>
+        <kendo-dropdownlist
+          [data]="listItems"
+          textField="text"
+          valueField="value"
+          [(ngModel)]="selectedValue"
+        >
+      </kendo-dropdownlist>
+    </div>
+    
+    
+  </div>
+  <div class = "footerAdd">
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Save</button>
+      <button mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+  </div>
+
+</div>
+
