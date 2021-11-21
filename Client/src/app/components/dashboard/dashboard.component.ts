@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FilterExpandSettings } from '@progress/kendo-angular-treeview';
 import { Observable, of } from 'rxjs';
+import { CommonService } from 'src/app/Services/CommonService/common.service';
 import { HttpServerService } from 'src/app/Services/http-server.service';
 
 
@@ -9,12 +10,15 @@ import { HttpServerService } from 'src/app/Services/http-server.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnChanges {
+
 
   public filterExpandSettings: FilterExpandSettings = {
     expandMatches: true,
   };
-  
+
+  public selectedDepart : any = [];
+  public selectedKeys: any[] = ["0_2"];
     public treeNodes: any[] = [{
       "DepartmentId": 2,
       "Name": "Tổng giám đốc",
@@ -59,14 +63,20 @@ export class DashboardComponent implements OnInit {
       "Departments": []
   }];
 
-public always = () => true;
-  constructor(private httpServerService: HttpServerService) { }
+  @Input() TreeDepartment : any = [];
+  
+  public always = () => true;
+  constructor(private common : CommonService) { }
+  
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('TreeView Onchange');
+  }
 
   public ngOnInit(): void {
-    this.httpServerService.getTreeDepartment().subscribe(data=>{
-      
-      console.log("data", data);
-    })
+    this.common.getDepartmentTree();
+    this.TreeDepartment = this.common.DepartmentTree;
+    console.log('dashboard', this.TreeDepartment);
   }
 
   public fetchChildren(node: any): Observable<any[]> {

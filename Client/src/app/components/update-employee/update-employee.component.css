@@ -22,7 +22,7 @@
     height: 100%;
     float: right;
   }
-  .furniture { width: 250px; }
+  .furniture { width: 200px; }
 
   .footerAdd {
     background-color:white;
@@ -36,8 +36,3 @@
     display: table;
     clear: both;
   }
-
-  .image{
-      
-  }
-  

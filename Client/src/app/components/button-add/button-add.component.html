@@ -1,0 +1,91 @@
+<button class="k-button" *ngIf="!opened" (click)="open()">New Employee</button>
+<kendo-dialog
+        *ngIf="opened"
+        title="Add new employee"
+        (close)="close('cancel')"
+        [minWidth]="250"
+        [width]="550"
+      >
+        <div style="margin: 10px;">
+          <p>Enter your username below</p>
+          <div class="row">
+            <div class="column">
+              <p>ID</p>
+              <div class="example-wrapper">
+                <input
+                    class="k-textbox"
+                    placeholder="Employee Id"
+                    style="width: 200px"
+                    required
+                    [(ngModel)]="Id"
+                  />
+                  <span *ngIf="Id === ''" class="errorMessage">*</span>
+              </div>
+            </div>
+            <div class="column">
+              <p>First name</p>
+              <div class="example-wrapper">
+                <input
+                  class="k-textbox"
+                  placeholder="Firstname"
+                  style="width: 200px"
+                  [(ngModel)]="Firstname"
+              />
+              <span *ngIf="Firstname === ''" class="errorMessage">*</span>
+              </div>
+            </div>
+            <div class="column">
+              <p>Last name</p>
+              <div class="example-wrapper">
+                <input
+                  class="k-textbox"
+                  placeholder="Lastname"
+                  style="width: 200px"
+                  [(ngModel)]="Lastname"
+                />
+                <span *ngIf="Lastname === ''" class="errorMessage">*</span>
+              </div>
+            </div>
+        
+            <div class="column">
+              <p>Department</p>
+              <kendo-dropdowntree
+                kendoDropDownTreeExpandable
+                [kendoDropDownTreeHierarchyBinding]="departments"
+                textField="Name"
+                valueField="DepartmentId"
+                childrenField="Departments"
+                [(ngModel)]="selectedDepartment"
+                class="furniture"
+            ></kendo-dropdowntree>
+            </div>
+        
+            <div class="column">
+              <p>Postion</p>
+                <kendo-dropdownlist
+                  [data]="listPostions"
+                  textField="Name"
+                  valueField="PositionId"
+                  [(ngModel)]="selectedPosition"
+                >
+              </kendo-dropdownlist>
+            </div>
+        
+            <div class="column">
+              <p>Title</p>
+                <kendo-dropdownlist
+                  [data]="listTitles"
+                  textField="Name"
+                  valueField="TitleId"
+                  [(ngModel)]="selectedTitle"
+                >
+              </kendo-dropdownlist>
+            </div>
+        </div>
+        </div>
+        <kendo-dialog-actions>
+          <button kendoButton (click)="close('no')">No</button>
+          <button kendoButton (click)="close('yes')">Yes</button>
+        </kendo-dialog-actions>
+      </kendo-dialog>
+

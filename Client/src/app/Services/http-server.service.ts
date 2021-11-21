@@ -16,7 +16,7 @@ export class HttpServerService {
   constructor(private httpClient: HttpClient) { }
 
   public getEmployees(CurrentPage : number): Observable<any>{
-    const url = `${this.REST_API_SERVER}/api/employees/getall?currentpage=1`;
+    const url = `${this.REST_API_SERVER}/api/employees/getall?currentpage=`+CurrentPage;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 
@@ -27,6 +27,11 @@ export class HttpServerService {
 
   public getTreeDepartment(): Observable<any>{
     const url = `${this.REST_API_SERVER}/api/departments/gettree`;
+    return this.httpClient.get<any>(url, this.httpOptions);
+  }
+
+  public getListTitles() : Observable<any>{
+    const url = `${this.REST_API_SERVER}/api/titles`;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 

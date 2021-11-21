@@ -13,9 +13,9 @@ export class EmployeeServiceService {
     FirstName: new FormControl('', Validators.required),
     LastName: new FormControl('', Validators.required),
     Avatar: new FormControl(''),
-    Department: new FormControl(''),
-    Position: new FormControl(''),
-    Title: new FormControl(0),
+    Department: new FormControl('', Validators.required),
+    Position: new FormControl('', Validators.required),
+    Title: new FormControl('', Validators.required),
   });
   
   initializeFormGroup() {
