@@ -39,7 +39,15 @@ body {
 .leftbox{
   padding-top: 1%;
   padding-left: 2%;
-  width: fit-content;
+  width: 20%;
+  height: 100%;
+  float:left;
+}
+
+.rightbox{
+  padding-top: 1%;
+  padding-left: 2%;
+  width: 80%;
   height: 100%;
   float:left;
 }
@@ -49,4 +57,9 @@ body {
   border-style: solid;
   width: 1px;
   height: auto;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
 }

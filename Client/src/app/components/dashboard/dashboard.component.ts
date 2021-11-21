@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FilterExpandSettings } from '@progress/kendo-angular-treeview';
 import { Observable, of } from 'rxjs';
+import { CommonService } from 'src/app/Services/CommonService/common.service';
+import { HttpServerService } from 'src/app/Services/http-server.service';
 
 
 @Component({
@@ -8,57 +10,73 @@ import { Observable, of } from 'rxjs';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnChanges {
+
 
   public filterExpandSettings: FilterExpandSettings = {
     expandMatches: true,
   };
+
+  public selectedDepart : any = [];
+  public selectedKeys: any[] = ["0_2"];
+    public treeNodes: any[] = [{
+      "DepartmentId": 2,
+      "Name": "Tổng giám đốc",
+      "FaDeparment": null,
+      "Departments": []
+  },
+  {
+      "DepartmentId": 3,
+      "Name": "Ban quản lý",
+      "FaDeparment": null,
+      "Departments": []
+  },
+  {
+      "DepartmentId": 4,
+      "Name": "Ban quản lý",
+      "FaDeparment": null,
+      "Departments": [
+          {
+              "DepartmentId": 6,
+              "Name": "Bộ phận tính lương",
+              "FaDeparment": 4,
+              "Departments": []
+          },
+          {
+              "DepartmentId": 7,
+              "Name": "Quản lí nhân sự",
+              "FaDeparment": 4,
+              "Departments": []
+          },
+          {
+              "DepartmentId": 8,
+              "Name": "Quản lí nhân sự",
+              "FaDeparment": 4,
+              "Departments": []
+          }
+      ]
+  },
+  {
+      "DepartmentId": 5,
+      "Name": "Bộ nhân sự",
+      "FaDeparment": null,
+      "Departments": []
+  }];
+
+  @Input() TreeDepartment : any = [];
   
-    public treeNodes: any[] = [
-      {
-        id: 1,
-        categoryName: "Storage",
-        subCategories: [
-          { 
-            id: 3,
-            categoryName: "Wall Shelving" ,
-            subCategories: [
-              { 
-                id: 6,
-                categoryName: "Subcate" 
-              }
-            ]},
-          { 
-            id: 4,
-            categoryName: "Floor Shelving" 
-          },
-          { 
-            id: 5,
-            categoryName: "Kids Storage" 
-          },
-        ],
-      },
-      {
-        id: 2,
-        categoryName: "Lights",
-        subCategories: [
-          { 
-            id: 7,
-            categoryName: "Ceiling" },
-          { 
-            id: 8,
-            categoryName: "Table" },
-          { 
-            id: 9,
-            categoryName: "Floor" },
-        ],
-      },
-];
+  public always = () => true;
+  constructor(private common : CommonService) { }
+  
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('TreeView Onchange');
+  }
 
-public always = () => true;
-  constructor() { }
-
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.common.getDepartmentTree();
+    this.TreeDepartment = this.common.DepartmentTree;
+    console.log('dashboard', this.TreeDepartment);
   }
 
   public fetchChildren(node: any): Observable<any[]> {

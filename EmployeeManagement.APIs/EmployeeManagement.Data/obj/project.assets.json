@@ -1046,11 +1046,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj",
+      "projectUniqueName": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj",
       "projectName": "EmployeeManagement.Data",
-      "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj",
+      "projectPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Data\\EmployeeManagement.Data.csproj",
       "packagesPath": "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\",
-      "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.Data\\obj\\",
+      "outputPath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

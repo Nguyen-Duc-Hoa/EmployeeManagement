@@ -1,30 +1,122 @@
-<div class="container">
 
 
-<div class="navfeature">
-    <kendo-excelexport [data]="gridData" fileName="Products.xlsx" #excelexport>
-        <kendo-excelexport-column field="Id" title="Mã nhân viên">
-        </kendo-excelexport-column>
-        <kendo-excelexport-column field="ContactName" title="Tên nhân viên">
-        </kendo-excelexport-column>
-    </kendo-excelexport>
-    <button type="button" class="k-button" (click)="excelexport.save()">Export To Excel</button>
-</div>
-<div>
-    <kendo-grid
-        [kendoGridBinding]="gridData"
-        [pageSize]="10"
-        [pageable]="true"
-        [sortable]="true"
-        [filterable]="true"
-        [groupable]="true"
-        [height]="510"
-        (dbClick) = "doubleclick()"
-        >
-        <kendo-grid-column field="Id" title="Mã nhân viên" [width]="140"></kendo-grid-column>
-        <kendo-grid-column field="ContactName" title="Họ và tên" [width]="120"></kendo-grid-column>
-        <kendo-grid-column field="City" title="Thành phố" [width]="100"></kendo-grid-column>
-        <kendo-grid-column field="ContactTitle" title="Chức danh" [width]="130"></kendo-grid-column>
-        </kendo-grid>
-</div>
-</div>F
+    <div class="navfeature">
+        <div>
+            <a>
+                <kendo-excelexport [data]="gridData" fileName="Products.xlsx" #excelexport>
+                    <kendo-excelexport-column field="Id" title="Mã nhân viên">
+                    </kendo-excelexport-column>
+                    <kendo-excelexport-column field="ContactName" title="Tên nhân viên">
+                    </kendo-excelexport-column>
+                </kendo-excelexport>
+                <button type="button" class="k-button" (click)="excelexport.save()">Export To Excel</button>
+            </a>
+        </div>   
+    </div>
+    <div>
+        <kendo-grid
+            [data]="gridView"
+            [filterable]="true"
+            [pageSize]="pagesize"
+            [skip]="skip"
+            [pageable]="true"
+            [height]="400"
+            (dblclick)="dblClickEvent($event)"
+            (pageChange)="pageChange($event)"
+            >
+            <kendo-grid-column field="Id" title="Mã nhân viên" [width]="80"></kendo-grid-column>
+            <kendo-grid-column field="ContactName" title="Họ và tên" [width]="120"></kendo-grid-column>
+            <kendo-grid-column field="City" title="Tên phòng ban" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="ContactTitle" title="Vị trí" [width]="130"></kendo-grid-column>
+            <kendo-grid-column field="ContactTitle" title="Chức danh" [width]="130"></kendo-grid-column>
+            </kendo-grid>
+    </div>
+
+    <kendo-dialog
+    *ngIf="opened"
+    title="Edit Employee"
+    (close)="close('cancel')"
+    [minWidth]="250"
+    [width]="550"
+  >
+    <div style="margin: 10px;">
+      <p>Enter your username below</p>
+      <div class="row">
+        <div class="column">
+          <p>ID</p>
+          <div class="example-wrapper">
+            <input
+                class="k-textbox"
+                placeholder="Employee Id"
+                value=""
+                style="width: 200px"
+                [(ngModel)]="Id"
+              />
+          </div>
+        </div>
+        <div class="column">
+          <p>First name</p>
+          <div class="example-wrapper">
+            <input
+              class="k-textbox"
+              placeholder="Firstname"
+              style="width: 200px"
+              [(ngModel)]="Firstname"
+          />
+          </div>
+        </div>
+        <div class="column">
+          <p>Last name</p>
+          <div class="example-wrapper">
+            <input
+              class="k-textbox"
+              placeholder="Lastname"
+              style="width: 200px"
+              [(ngModel)]="Lastname"
+            />
+          </div>
+        </div>
+    
+        <div class="column">
+          <p>Department</p>
+          <kendo-dropdowntree
+            kendoDropDownTreeExpandable
+            [kendoDropDownTreeHierarchyBinding]="departments"
+            textField="department"
+            valueField="id"
+            childrenField="items"
+            [(ngModel)]="selectedDepartment"
+            class="furniture"
+        ></kendo-dropdowntree>
+        </div>
+    
+        <div class="column">
+          <p>Postion</p>
+            <kendo-dropdownlist
+              [data]="postions"
+              textField="Name"
+              valueField="Id"
+              [(ngModel)]="selectedPosition"
+            >
+          </kendo-dropdownlist>
+        </div>
+    
+        <div class="column">
+          <p>Title</p>
+            <kendo-dropdownlist
+              [data]="listItems"
+              textField="text"
+              valueField="value"
+              [(ngModel)]="selectedTitle"
+            >
+          </kendo-dropdownlist>
+        </div>
+    </div>
+    </div>
+    <kendo-dialog-actions>
+      <button kendoButton (click)="close('no')">No</button>
+      <button kendoButton (click)="close('yes')">Yes</button>
+    </kendo-dialog-actions>
+  </kendo-dialog>
+
+

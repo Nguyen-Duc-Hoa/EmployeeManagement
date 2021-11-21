@@ -1,0 +1,16 @@
+<div>
+    <app-dashboard [TreeDepartment]="TreeDepartment"></app-dashboard>
+    <div>
+        <div class="rightbox">
+            <div class="navfeature">
+                <app-button-add 
+                    [departments] = "TreeDepartment"
+                    [listPostions] = "ListPosition"
+                    [listTitles] = "ListTitle"
+                ></app-button-add>
+            </div>
+            <app-grid-employee></app-grid-employee>
+        </div>
+    </div>
+    
+</div>

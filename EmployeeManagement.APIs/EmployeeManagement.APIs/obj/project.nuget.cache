@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ppdEkuJ7vL2u5XGphO9S233r0g6A/jfxWTwW91dii81u1CVUWHqOGjMRYvh/9lpSdYVcegArBHw7mgpbH7PDg==",
+  "dgSpecHash": "PBEZ10dEKS5JPM5r/olmHrFUZaA5P76s0Aw+HhjBvy9lagV+YLCgjKRGDWzbGAn6jh71CLPTighoagnx/aMjXQ==",
   "success": true,
-  "projectFilePath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\WebAPI\\EmployeeManagement.APIs\\EmployeeManagement.APIs\\EmployeeManagement.APIs.csproj",
+  "projectFilePath": "G:\\ThucHanh\\Angular\\EmployeeManagement\\Client\\EmployeeManagement.APIs\\EmployeeManagement.APIs\\EmployeeManagement.APIs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Nguyen Duc Hoa\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

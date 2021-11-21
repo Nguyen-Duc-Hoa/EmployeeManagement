@@ -1,5 +1,45 @@
 .navfeature{
     height: max-content;
+    padding: 1%;
     align-content: flex-end;
     background-color: cadetblue;
 }
+
+.bodyAdd {
+    margin: 0;
+}
+.column{
+    float: left;
+  width: 50%;
+  padding: 15px;
+  float: left;
+
+}
+.column1{
+    padding-top: 1%;
+    padding-left: 2%;
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+  .column2{
+    padding-top: 1%;
+    padding-left: 2%;
+    width: 50%;
+    height: 100%;
+    float: right;
+  }
+  .furniture { width: 200px; }
+
+  .footerAdd {
+    background-color:white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

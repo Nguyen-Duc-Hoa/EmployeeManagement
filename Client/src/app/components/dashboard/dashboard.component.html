@@ -1,13 +1,17 @@
+<p>{{ selectedKeys }}</p>
 <div class="leftbox">
     <kendo-treeview
         kendoTreeViewHierarchyBinding
         kendoTreeViewExpandable
         [filterable]="true"
         [expandOnFilter]="filterExpandSettings"
-        [nodes]="treeNodes"
-        childrenField="subCategories"
-        textField="categoryName"
-        idField="id"
+        [nodes]="TreeDepartment"
+        childrenField="Departments"
+        textField="Name"
+        idField="DepartmentId"
+        kendoTreeViewSelectable
+        selectBy = "DepartmentId"
+        [(selectedKeys)]="selectedKeys"
     >
 </kendo-treeview>
 </div>

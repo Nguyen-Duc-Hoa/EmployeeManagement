@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { GridDataResult } from '@progress/kendo-angular-grid';
+import { EmployeeServiceService } from 'src/app/Services/EmployeeServices/employee-service.service';
+import { UpdateEmployeeComponent } from '../update-employee/update-employee.component';
 
 @Component({
   selector: 'app-grid-employee',
@@ -7,6 +10,72 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridEmployeeComponent implements OnInit {
 
+  public data: any[] = [
+    {
+      text: "Furniture",
+      id: 1,
+      items: [
+        { text: "Tables & Chairs", id: 2 },
+        { text: "Sofas", id: 3 },
+        { text: "Occasional Furniture", id: 4 },
+      ],
+    },
+    {
+      text: "Decor",
+      id: 5,
+      items: [
+        { text: "Bed Linen", id: 6 },
+        { text: "Carpets", id: 7 },
+      ],
+    },
+  ];
+
+  
+  public departments: any[] = [
+    {
+      department: "Furniture",
+      id: 1,
+      items: [
+        { department: "Tables & Chairs", id: 2 },
+        { department: "Sofas", id: 3 },
+        { department: "Occasional Furniture", id: 4 },
+      ],
+    },
+    {
+      department: "Decor",
+      id: 5,
+      items: [
+        { department: "Bed Linen", id: 6 },
+        { department: "Carpets", id: 7 },
+      ],
+    },
+  ];
+  // Using an array of objects as `[data]`
+
+  public postions: any =[
+    { Id: 1, Name:'Nhân sự' },
+    { Id: 2, Name:'Quản lí' },
+    { Id: 3, Name:'Tính lương' },
+  ]
+  public listItems: any = [
+    { text: "Small", value: 1 },
+    { text: "Medium", value: 2 },
+    { text: "Large", value: 3 },
+  ];
+  // Trying to assign a primitive value to the DropDownListComponent
+
+  public selectedPosition : any = { Id: 1 };
+  public selectedTitle : any = { value: 1 };
+  public selectedDepartment : any = { department: "Bed Linen", id: 6};
+  
+  public Id : any;
+  public Firstname : any;
+  public Lastname : any;
+  public opened = false;
+  public gridView : GridDataResult;
+  public skip = 0;
+  public pagesize = 5;
+  public currentPage = 1;
   public gridData: any[] = [
       {
         Id: "ALFKI",
@@ -509,152 +578,88 @@ export class GridEmployeeComponent implements OnInit {
         Country: "USA",
         Phone: "(503) 555-6874",
         Fax: "(503) 555-2376",
-      },
-      {
-        Id: "HUNGO",
-        CompanyName: "Hungry Owl All-Night Grocers",
-        ContactName: "Patricia McKenna",
-        ContactTitle: "Sales Associate",
-        Address: "8 Johnstown Road",
-        City: "Cork",
-        Region: "Co. Cork",
-        Country: "Ireland",
-        Phone: "2967 542",
-        Fax: "2967 3333",
-      },
-      {
-        Id: "ISLAT",
-        CompanyName: "Island Trading",
-        ContactName: "Helen Bennett",
-        ContactTitle: "Marketing Manager",
-        Address: "Garden House Crowther Way",
-        City: "Cowes",
-        Region: "Isle of Wight",
-        PostalCode: "PO31 7PJ",
-        Country: "UK",
-        Phone: "(198) 555-8888",
-      },
-      {
-        Id: "KOENE",
-        CompanyName: "Königlich Essen",
-        ContactName: "Philip Cramer",
-        ContactTitle: "Sales Associate",
-        Address: "Maubelstr. 90",
-        City: "Brandenburg",
-        PostalCode: "14776",
-        Country: "Germany",
-        Phone: "0555-09876",
-      },
-      {
-        Id: "LAUGB",
-        CompanyName: "Laughing Bacchus Wine Cellars",
-        ContactName: "Yoshi Tannamuri",
-        ContactTitle: "Marketing Assistant",
-        Address: "1900 Oak St.",
-        City: "Vancouver",
-        Region: "BC",
-        PostalCode: "V3F 2K1",
-        Country: "Canada",
-        Phone: "(604) 555-3392",
-        Fax: "(604) 555-7293",
-      },
-      {
-        Id: "LAZYK",
-        CompanyName: "Lazy K Kountry Store",
-        ContactName: "John Steel",
-        ContactTitle: "Marketing Manager",
-        Address: "12 Orchestra Terrace",
-        City: "Walla Walla",
-        Region: "WA",
-        PostalCode: "99362",
-        Country: "USA",
-        Phone: "(509) 555-7969",
-        Fax: "(509) 555-6221",
-      },
-      {
-        Id: "LEHMS",
-        CompanyName: "Lehmanns Marktstand",
-        ContactName: "Renate Messner",
-        ContactTitle: "Sales Representative",
-        Address: "Magazinweg 7",
-        City: "Frankfurt a.M.",
-        PostalCode: "60528",
-        Country: "Germany",
-        Phone: "069-0245984",
-        Fax: "069-0245874",
-      },
-      {
-        Id: "LILAS",
-        CompanyName: "LILA-Supermercado",
-        ContactName: "Carlos González",
-        ContactTitle: "Accounting Manager",
-        Address: "Carrera 52 con Ave. Bolívar #65-98 Llano Largo",
-        City: "Barquisimeto",
-        Region: "Lara",
-        PostalCode: "3508",
-        Country: "Venezuela",
-        Phone: "(9) 331-6954",
-        Fax: "(9) 331-7256",
-      },
-      {
-        Id: "LINOD",
-        CompanyName: "LINO-Delicateses",
-        ContactName: "Felipe Izquierdo",
-        ContactTitle: "Owner",
-        Address: "Ave. 5 de Mayo Porlamar",
-        City: "I. de Margarita",
-        Region: "Nueva Esparta",
-        PostalCode: "4980",
-        Country: "Venezuela",
-        Phone: "(8) 34-56-12",
-        Fax: "(8) 34-93-93",
-      },
-      {
-        Id: "LONEP",
-        CompanyName: "Lonesome Pine Restaurant",
-        ContactName: "Fran Wilson",
-        ContactTitle: "Sales Manager",
-        Address: "89 Chiaroscuro Rd.",
-        City: "Portland",
-        Region: "OR",
-        PostalCode: "97219",
-        Country: "USA",
-        Phone: "(503) 555-9573",
-        Fax: "(503) 555-9646",
-      },
-      {
-        Id: "RICAR",
-        CompanyName: "Ricardo Adocicados",
-        ContactName: "Janete Limeira",
-        ContactTitle: "Assistant Sales Agent",
-        Address: "Av. Copacabana, 267",
-        City: "Rio de Janeiro",
-        Region: "RJ",
-        PostalCode: "02389-890",
-        Country: "Brazil",
-        Phone: "(21) 555-3412",
-      },
-      {
-        Id: "TOMSP",
-        CompanyName: "Toms Spezialitäten",
-        ContactName: "Karin Josephs",
-        ContactTitle: "Marketing Manager",
-        Address: "Luisenstr. 48",
-        City: "Münster",
-        PostalCode: "44087",
-        Country: "Germany",
-        Phone: "0251-031259",
-        Fax: "0251-035695",
-      },
+      }
     ];
 
-  constructor() { }
+  constructor(private editUser: UpdateEmployeeComponent, private employeeService: EmployeeServiceService) {
+    this.gridView ={ data: this.gridData, total: this.gridData.length}
+   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+
   }
 
   public doubleclick(){
     console.log('click');
+  }
+
+
+  public dblClickEvent(event : any) {
+    // debugger;
+    console.log('the selected row Index is '+ event.path[1].rowIndex );
+    //use the following line if you want to get the clicked cell content:
+    console.log('clicked cell content'+ event.path[0].rowIndex);
+    console.log('data: ', this.gridData[event.path[1].rowIndex])
+    this.Firstname = this.gridData[event.path[1].rowIndex].ContactName;
+    this.Lastname = this.gridData[event.path[1].rowIndex].ContactName;
+    this.selectedTitle = {value: 2};
+    this.selectedPosition = {Id:2};
+    this.selectedDepartment = {department: "Furniture", id: 1};
+    this.opened = true;
+
+  }
+
+  public close(event : any){
+    if(event == 'yes'){
+      console.log('yes');
+    }
+
+    this.opened = false;
+  }
+
+  public pageChange(event : any){
+    this.skip = event.skip;
+    this.currentPage = this.skip/ this.pagesize + 1;
+    console.log('page change', this.currentPage);
+    this.gridData = [{
+      Id: "HUNGO",
+      CompanyName: "Hungry Owl All-Night Grocers",
+      ContactName: "Patricia McKenna",
+      ContactTitle: "Sales Associate",
+      Address: "8 Johnstown Road",
+      City: "Cork",
+      Region: "Co. Cork",
+      Country: "Ireland",
+      Phone: "2967 542",
+      Fax: "2967 3333",
+    },
+    {
+      Id: "ISLAT",
+      CompanyName: "Island Trading",
+      ContactName: "Helen Bennett",
+      ContactTitle: "Marketing Manager",
+      Address: "Garden House Crowther Way",
+      City: "Cowes",
+      Region: "Isle of Wight",
+      PostalCode: "PO31 7PJ",
+      Country: "UK",
+      Phone: "(198) 555-8888",
+    },
+    {
+      Id: "LINOD",
+      CompanyName: "LINO-Delicateses",
+      ContactName: "Felipe Izquierdo",
+      ContactTitle: "Owner",
+      Address: "Ave. 5 de Mayo Porlamar",
+      City: "I. de Margarita",
+      Region: "Nueva Esparta",
+      PostalCode: "4980",
+      Country: "Venezuela",
+      Phone: "(8) 34-56-12",
+      Fax: "(8) 34-93-93",
+    }];
+
+    this.gridView ={ data: this.gridData, total: this.gridData.length,}
   }
 
 }
