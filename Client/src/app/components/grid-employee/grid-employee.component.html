@@ -25,11 +25,12 @@
             (pageChange)="pageChange($event)"
             >
             <kendo-grid-column field="Id" title="Mã nhân viên" [width]="80"></kendo-grid-column>
-            <kendo-grid-column field="ContactName" title="Họ và tên" [width]="120"></kendo-grid-column>
-            <kendo-grid-column field="City" title="Tên phòng ban" [width]="100"></kendo-grid-column>
-            <kendo-grid-column field="ContactTitle" title="Vị trí" [width]="130"></kendo-grid-column>
-            <kendo-grid-column field="ContactTitle" title="Chức danh" [width]="130"></kendo-grid-column>
-            </kendo-grid>
+            <kendo-grid-column field="LastName" title="Họ" [width]="120"></kendo-grid-column>
+            <kendo-grid-column field="FirstName" title="Tên nhân viên" [width]="100"></kendo-grid-column>
+            <kendo-grid-column field="Department" title="Phòng ban" [width]="130"></kendo-grid-column>
+            <kendo-grid-column field="Position" title="Vị trí nhân viên" [width]="130"></kendo-grid-column>
+            <kendo-grid-column field="Title" title="Chức danh" [width]="130"></kendo-grid-column>
+        </kendo-grid>
     </div>
 
     <kendo-dialog
@@ -51,6 +52,7 @@
                 value=""
                 style="width: 200px"
                 [(ngModel)]="Id"
+                disabled = "true"
               />
           </div>
         </div>
@@ -82,9 +84,9 @@
           <kendo-dropdowntree
             kendoDropDownTreeExpandable
             [kendoDropDownTreeHierarchyBinding]="departments"
-            textField="department"
-            valueField="id"
-            childrenField="items"
+            textField="Name"
+            valueField="DepartmentId"
+            childrenField="Departments"
             [(ngModel)]="selectedDepartment"
             class="furniture"
         ></kendo-dropdowntree>
@@ -93,9 +95,9 @@
         <div class="column">
           <p>Postion</p>
             <kendo-dropdownlist
-              [data]="postions"
+              [data]="listPostions"
               textField="Name"
-              valueField="Id"
+              valueField="PositionId"
               [(ngModel)]="selectedPosition"
             >
           </kendo-dropdownlist>
@@ -104,9 +106,9 @@
         <div class="column">
           <p>Title</p>
             <kendo-dropdownlist
-              [data]="listItems"
-              textField="text"
-              valueField="value"
+              [data]="listTitles"
+              textField="Name"
+              valueField="TitleId"
               [(ngModel)]="selectedTitle"
             >
           </kendo-dropdownlist>

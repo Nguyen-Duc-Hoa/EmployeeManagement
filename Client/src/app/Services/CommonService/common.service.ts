@@ -18,7 +18,6 @@ export class CommonService {
     this.getDepartmentTree();
     this.getPosition();
     this.getTitle();
-    console.log('add common data');
   }
   
   public getDepartmentTree(){
@@ -32,7 +31,6 @@ export class CommonService {
   public getPosition(){
     this.httpServerService.getPositions().subscribe(data=>{
       this.position$ = data;
-      console.log('common :', this.position$)
     })
   }
 

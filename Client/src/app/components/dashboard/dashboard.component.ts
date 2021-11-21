@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FilterExpandSettings } from '@progress/kendo-angular-treeview';
 import { Observable, of } from 'rxjs';
 import { CommonService } from 'src/app/Services/CommonService/common.service';
@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit, OnChanges {
   };
 
   public selectedDepart : any = [];
-  public selectedKeys: any[] = ["0_2"];
+  public selectedKeys: any = [0];
     public treeNodes: any[] = [{
       "DepartmentId": 2,
       "Name": "Tổng giám đốc",
@@ -65,18 +65,26 @@ export class DashboardComponent implements OnInit, OnChanges {
 
   @Input() TreeDepartment : any = [];
   
+  @Output()
+  changeDepartClick : EventEmitter<number> = new EventEmitter<number>();
+
   public always = () => true;
   constructor(private common : CommonService) { }
   
   
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('TreeView Onchange');
   }
 
   public ngOnInit(): void {
     this.common.getDepartmentTree();
     this.TreeDepartment = this.common.DepartmentTree;
-    console.log('dashboard', this.TreeDepartment);
+  }
+
+  public selectKeyChange(event : any){
+    console.log(this.selectedKeys);
+    this.changeDepartClick.emit(this.selectedKeys);
+
+
   }
 
   public fetchChildren(node: any): Observable<any[]> {

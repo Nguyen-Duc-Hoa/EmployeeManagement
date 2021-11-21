@@ -22,7 +22,7 @@ namespace EmployeeManagement.Data.Entities
         public string LastName { get; set; }
 
         [Column("avatar")]
-        public byte[] Avatar { get; set; }
+        public string Avatar { get; set; }
 
         [Column("department_id")]
         [Required]

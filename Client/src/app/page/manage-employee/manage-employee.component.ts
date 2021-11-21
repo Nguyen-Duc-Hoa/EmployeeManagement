@@ -14,8 +14,11 @@ export class ManageEmployeeComponent implements OnInit {
   public ListPosition : any = [];
   public ListTitle : any = [];
   public ListEmployee : any = [];
+  
 
-  public DepartmentId : number = 0;
+  public currentPage : any = 1;
+
+  public DepartmentId : any = [0];
 
   public always = () => true;
   
@@ -24,6 +27,7 @@ export class ManageEmployeeComponent implements OnInit {
     this.getListDepartment();
     this.getListPosition();
     this.getListTitles();
+    this.getEmployee();
   }
 
 
@@ -52,6 +56,32 @@ export class ManageEmployeeComponent implements OnInit {
       this.ListTitle = data;
       this.common.getTitle();    
     });
+  }
+
+  public getEmployee(){
+    if(this.DepartmentId[0] == 0)
+    {
+      this.httpServerService.getEmployees(this.currentPage).subscribe(data=>{
+        this.ListEmployee = data;
+        console.log('employee :', this.ListEmployee);
+      });
+    }
+
+    else{
+      this.httpServerService.getEmployeeByDepartment(this.currentPage, this.DepartmentId[0]).subscribe(data=>{
+        this.ListEmployee = data;
+        console.log('new after click :', data);
+        console.log('new after click :',  this.DepartmentId[0]);
+      });
+    }
+    
+  }
+
+  public clickDepartmentchange(event : any){
+    this.DepartmentId = event;
+    console.log('department id:', this.DepartmentId);
+    console.log('this department change ', event);
+    this.getEmployee();
   }
 
 }

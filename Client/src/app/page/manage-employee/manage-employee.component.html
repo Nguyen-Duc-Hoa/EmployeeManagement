@@ -1,5 +1,5 @@
 <div>
-    <app-dashboard [TreeDepartment]="TreeDepartment"></app-dashboard>
+    <app-dashboard [TreeDepartment]="TreeDepartment" (changeDepartClick)="clickDepartmentchange($event)"></app-dashboard>
     <div>
         <div class="rightbox">
             <div class="navfeature">
@@ -9,7 +9,11 @@
                     [listTitles] = "ListTitle"
                 ></app-button-add>
             </div>
-            <app-grid-employee></app-grid-employee>
+            <app-grid-employee 
+                [departments] = "TreeDepartment"
+                [listPostions] = "ListPosition"
+                [listTitles] = "ListTitle"
+                [listEmployee] = "ListEmployee"></app-grid-employee>
         </div>
     </div>
     

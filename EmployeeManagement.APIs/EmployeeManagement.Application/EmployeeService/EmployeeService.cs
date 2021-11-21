@@ -11,6 +11,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using EmployeeManagement.Repository.Utilities;
+using Microsoft.EntityFrameworkCore;
+using EmployeeManagement.Model.AtrributeModels;
 
 namespace EmployeeManagement.Application.EmployeeService
 {
@@ -19,6 +21,7 @@ namespace EmployeeManagement.Application.EmployeeService
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private MyDbContext _context;
+        private List<int> listId = new List<int>();
 
         public EmployeeService(IUnitOfWork unitOfWork, IMapper mapper, MyDbContext context)
         {
@@ -27,6 +30,7 @@ namespace EmployeeManagement.Application.EmployeeService
             _context = context;
         }
 
+        
         public async Task<ResponseResult> AddEmployee(Employee employee)
         {
             try
@@ -104,17 +108,35 @@ namespace EmployeeManagement.Application.EmployeeService
 
         public async Task<PaginationResult<EmployeeDTO>> GetByDepart(int currentPage, int departId)
         {
+            Expression<Func<Employee, bool>> expression = PredicateBuilder.True<Employee>();
+
+            Expression<Func<Employee, bool>> expression1 = PredicateBuilder.True<Employee>();
+
+            var list = ListIdDepartment(departId);
+
+            expression = expression.And(p => p.DepartmentId == departId);
+
+            if (listId.Count() > 0)
+            {
+                foreach(int item in listId)
+                {
+                    expression = expression.Or(p => p.DepartmentId == item);
+                }
+            }
+
+            expression1 = expression1.And(expression);
+
             try
             {
                 var result = await _unitOfWork.Employees.GetAllWithPagination(
-                    expression: p => p.DepartmentId == departId,
+                    expression: expression,
                     orderBy: x => x.OrderBy(e => e.FirstName),
                     includes: new List<string> { "Department", "Position", "Title" },
                     pagination: new Pagination { CurrentPage = currentPage }
                     );
 
                 var listEmp = _mapper.Map<List<EmployeeDTO>>(result.Item1);
-                return new PaginationResult<EmployeeDTO> { items = listEmp, CurrentPage = result.Item2.CurrentPage, TotalPage = result.Item2.TotalPage };
+                return new PaginationResult<EmployeeDTO> { items = listEmp, CurrentPage = result.Item2.CurrentPage, TotalItem = result.Item2.TotalItem };
 
             }
             catch
@@ -135,7 +157,7 @@ namespace EmployeeManagement.Application.EmployeeService
                     );
 
                 var listEmp = _mapper.Map<List<EmployeeDTO>>(result.Item1);
-                return new PaginationResult<EmployeeDTO> { items = listEmp, CurrentPage = result.Item2.CurrentPage, TotalPage = result.Item2.TotalPage };
+                return new PaginationResult<EmployeeDTO> { items = listEmp, CurrentPage = result.Item2.CurrentPage, TotalItem = result.Item2.TotalItem };
                    
             }
             catch
@@ -191,13 +213,64 @@ namespace EmployeeManagement.Application.EmployeeService
                     );
 
                 var listEmp = _mapper.Map<List<EmployeeDTO>>(result.Item1);
-                return new PaginationResult<EmployeeDTO> { items = listEmp, CurrentPage = result.Item2.CurrentPage, TotalPage = result.Item2.TotalPage };
+                return new PaginationResult<EmployeeDTO> { items = listEmp, CurrentPage = result.Item2.CurrentPage, TotalItem = result.Item2.TotalItem };
 
             }
             catch
             {
                 return null;
             }
+        }
+
+        public Task<IEnumerable<DepartmentDTO>> ListIdDepartment(int fa_id)
+        {
+            var result = _context.Departments.ToList();
+
+
+            var list = _mapper.Map<List<DepartmentDTO>>(result);
+
+            var list1 = list.Where(x => x.DepartmentId == fa_id).First();
+
+            DepartmentDTO list2 = new DepartmentDTO();
+            list2.DepartmentId = list1.DepartmentId;
+            list2.Departments = list1.Departments;
+
+            Listttt(list2);
+
+            return null;
+
+        }
+
+        public void Listttt(DepartmentDTO list)
+        {
+            var list1 = list.Departments.ToList();
+            if (list1.Count() > 0)
+            {
+                foreach (var item in list1)
+                {
+                    if (!Existed_Id(item.DepartmentId))
+                    {
+                        listId.Add(item.DepartmentId);
+                        Listttt(item);
+                    }   
+                }
+            }
+        }
+
+        //id ton tai ==> false
+        public bool Existed_Id(int id)
+        {
+            if (listId != null)
+            {
+                foreach (int item in listId)
+                {
+                    if (id == item)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
     }

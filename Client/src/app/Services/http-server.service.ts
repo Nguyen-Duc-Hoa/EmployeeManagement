@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -35,4 +35,23 @@ export class HttpServerService {
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 
+  public getEmployeeByDepartment(currentPage : number, departId : number) : Observable<any>{
+    console.log("http :", currentPage, " ", departId)
+    const url = this.REST_API_SERVER+'/api/employees?currentpage='+currentPage+'&departid='+departId;
+    return this.httpClient.get<any>(url, this.httpOptions);
+  }
+
+  public postAddEmployee(employee : any) : Observable<any>{
+    const url = `${this.REST_API_SERVER}/api/employees`;
+    console.log('post : url ', url);
+    console.log('post : employee', employee)
+    return this.httpClient.post<any>(url, JSON.stringify(employee), this.httpOptions);
+  }
+
+  public putEditEmployee(employee : any) : Observable<any>{
+    const url = `${this.REST_API_SERVER}/api/employees`;
+    console.log('post : url ', url);
+    console.log('post : employee', employee)
+    return this.httpClient.put<any>(url, JSON.stringify(employee), this.httpOptions);
+  }
 }

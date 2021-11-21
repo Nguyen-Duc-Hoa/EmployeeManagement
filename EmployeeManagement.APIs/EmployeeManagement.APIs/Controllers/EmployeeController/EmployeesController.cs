@@ -25,15 +25,15 @@ namespace EmployeeManagement.APIs.Controllers.EmployeeController
 
         //POST: api/employees
         [HttpPost]
-        public async Task<IActionResult> AddEmployee(Employee employee)
+        public async Task<IActionResult> AddEmployee([FromBody]Employee employee)
         {
             var result = await _employeeService.AddEmployee(employee);
             return Ok(result);
         }
 
-        //POST: api/employees
+        //PUT: api/employees
         [HttpPut]
-        public async Task<IActionResult> UpdateEmployee(Employee employee)
+        public async Task<IActionResult> UpdateEmployee([FromBody]Employee employee)
         {
             var result = await _employeeService.UpdateEmployee(employee);
             return Ok(result);
@@ -41,7 +41,7 @@ namespace EmployeeManagement.APIs.Controllers.EmployeeController
 
         //DELETE: api/employees
         [HttpDelete]
-        public async Task<IActionResult> DeleteEmployee(Employee employee)
+        public async Task<IActionResult> DeleteEmployee([FromBody]Employee employee)
         {
             var result = await _employeeService.DeleteEmployee(employee);
             return Ok(result);
@@ -51,7 +51,7 @@ namespace EmployeeManagement.APIs.Controllers.EmployeeController
         [HttpGet]
         public async Task<IActionResult> GetByDepartment(int currentpage, int departid)
         {
-            var result = await _employeeService.GetByDepart(currentpage, departid);
+                var result = await _employeeService.GetByDepart(currentpage, departid);
             if (result != null)
                 return Ok(result);
             return NotFound();

@@ -13,6 +13,7 @@ namespace EmployeeManagement.Application.AutoMapper
         public MapperInitializer()
         {
             CreateMap<Department, DepartmentDTO>().ReverseMap();
+            CreateMap<DepartmentDTO, DepartmentDTO>().ReverseMap();
             CreateMap<Employee, EmployeeDTO>().ForMember(dest => dest.Avatar, opt => opt.MapFrom(src => Convert.ToBase64String(src.Avatar)))
                 .ForMember(dest => dest.Department, opt => opt.MapFrom(src => src.Department.Name))
                 .ForMember(dest => dest.Position, opt => opt.MapFrom(src => src.Position.Name))

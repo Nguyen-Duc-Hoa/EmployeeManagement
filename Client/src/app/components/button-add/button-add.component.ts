@@ -1,5 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { EmployeeServiceService } from 'src/app/Services/EmployeeServices/employee-service.service';
+import { HttpServerService } from 'src/app/Services/http-server.service';
 
 @Component({
   selector: 'app-button-add',
@@ -8,30 +10,9 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ButtonAddComponent implements OnInit, OnChanges {
   
-  @Input() departments: any[] = [
-    {
-      DepartmentId: 2,
-      Name: "Tổng giám đốc",
-      FaDeparment: null,
-      Departments: []
-  },
-  {
-      DepartmentId: 3,
-      Name: "Ban quản lý",
-      FaDeparment: null,
-      Departments: []
-  },
-  ];
-  // Using an array of objects as `[data]`
-  @Input() listPostions: any =[
-    { PositionId: 1, Name: "vị trí 1"},
-    { PositionId: 2, Name: "vị trí 2"},
-    { PositionId: 3, Name: "vị trí 3"},
-  ];
-
-  @Input() listTitles: any = [
-    {TitleId: 1, Name: "Chức danh 1"}
-  ];
+  @Input() departments: any[] = [];
+  @Input() listPostions: any =[];
+  @Input() listTitles: any = [];
   // Trying to assign a primitive value to the DropDownListComponent
 
   public selectedPosition : any = this.listPostions[0];
@@ -43,10 +24,17 @@ export class ButtonAddComponent implements OnInit, OnChanges {
   public Lastname : string ='';
   public opened = false;
 
+  public employeeForm : any = [];
 
-  constructor(form: FormBuilder) { }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('add employee onChange');
+
+  constructor(private httpServerService: HttpServerService, private employeeService : EmployeeServiceService) { 
+  }
+  
+  public ngOnChanges(changes: SimpleChanges): void {
+    this.selectedPosition = this.listPostions[0];
+    this.selectedTitle = this.listTitles[0];
+    this.selectedDepartment = this.departments[0];
+    this.employeeForm = this.employeeService.employee1;
   }
 
   public ngOnInit(): void {
@@ -61,6 +49,22 @@ export class ButtonAddComponent implements OnInit, OnChanges {
       console.log('title', this.selectedTitle.TitleId);
       console.log('Department', this.selectedDepartment.DepartmentId);
 
+      this.employeeForm.Id = this.Id;
+      this.employeeForm.Avatar = null;
+      this.employeeForm.FirstName = this.Firstname;
+      this.employeeForm.LastName = this.Lastname;
+      this.employeeForm.PositionId = this.selectedPosition.PositionId;
+      this.employeeForm.TitleId = this.selectedTitle.TitleId;
+      this.employeeForm.DepartmentId = this.selectedDepartment.DepartmentId
+
+      console.log(this.employeeForm);
+
+      this.httpServerService.postAddEmployee(this.employeeForm).subscribe(data =>{
+        console.log('insert', data);
+      })
+      this.httpServerService.putEditEmployee(this.employeeForm).subscribe(data =>{
+        console.log('Put', data);
+      })
     }
   
     this.reset();

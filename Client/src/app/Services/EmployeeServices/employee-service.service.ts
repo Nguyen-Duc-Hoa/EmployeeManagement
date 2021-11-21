@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeServiceService {
 
-  constructor() { }
+  constructor(private form : FormBuilder) { }
 
-  form: FormGroup = new FormGroup({
-    $Id: new FormControl(null),
+  employee: FormGroup = new FormGroup({
+    Id: new FormControl(null),
     FirstName: new FormControl('', Validators.required),
     LastName: new FormControl('', Validators.required),
     Avatar: new FormControl(''),
@@ -18,9 +18,18 @@ export class EmployeeServiceService {
     Title: new FormControl('', Validators.required),
   });
   
+  employee1 : any = {
+      Id: '',
+      FirstName: '',
+      LastName: '',
+      Avatar: '',
+      DepartmentId: '',
+      PositionId: '',
+      TitleId: ''
+  }
   initializeFormGroup() {
-    this.form.setValue({
-      $Id: null,
+    this.employee.setValue({
+      Id: null,
       FirstName: '',
       LastName: '',
       Avatar: '',

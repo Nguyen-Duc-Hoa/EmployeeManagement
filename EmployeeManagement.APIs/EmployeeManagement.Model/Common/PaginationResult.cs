@@ -8,7 +8,7 @@ namespace EmployeeManagement.Model.Common
     {
         public List<T> items { get; set; }
         public int CurrentPage { get; set; }
-        public int TotalPage { get; set; }
+        public int TotalItem { get; set; }
         
     }
 }

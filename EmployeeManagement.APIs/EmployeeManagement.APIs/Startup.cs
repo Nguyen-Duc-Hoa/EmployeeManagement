@@ -43,6 +43,13 @@ namespace EmployeeManagement.APIs
             services.AddTransient<IPositionService, PositionService>();
             services.AddTransient<ITitleService, TitleService>();
 
+            //Enable Cors
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+            });
+
             //set connection string database
             var sqlConnectionString = Configuration["DefaultConnection"];
             services.AddDbContext<MyDbContext>(opt =>
